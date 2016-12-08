@@ -1,0 +1,587 @@
+#! C:/Program Files/Nuke10.0v4/nuke-10.0.4.dll -nx
+#write_info Write1 file:"D:/3d/f16/final1/f3/l%02d.jpg" format:"300 300 1" chans:":rgba.red:rgba.green:rgba.blue:" framerange:"0 11" fps:"0" colorspace:"default (sRGB)" datatype:"8 bit" transfer:"unknown" views:"main" colorManagement:"Nuke"
+version 10.0 v4
+define_window_layout_xml {<?xml version="1.0" encoding="UTF-8"?>
+<layout version="1.0">
+    <window x="0" y="1" w="1920" h="1159" screen="0">
+        <splitter orientation="1">
+            <split size="40"/>
+            <dock id="" hideTitles="1" activePageId="Toolbar.1">
+                <page id="Toolbar.1"/>
+            </dock>
+            <split size="1241" stretch="1"/>
+            <splitter orientation="2">
+                <split size="86"/>
+                <dock id=""/>
+                <split size="1008"/>
+                <dock id="" activePageId="DAG.1" focus="true">
+                    <page id="DAG.1"/>
+                    <page id="Curve Editor.1"/>
+                    <page id="DopeSheet.1"/>
+                </dock>
+            </splitter>
+            <split size="615"/>
+            <dock id="" activePageId="Properties.1">
+                <page id="Properties.1"/>
+            </dock>
+        </splitter>
+    </window>
+    <window x="3375" y="0" w="441" h="677" screen="1">
+        <splitter orientation="2">
+            <split size="643"/>
+            <dock id="" activePageId="Viewer.1">
+                <page id="Viewer.1"/>
+            </dock>
+        </splitter>
+    </window>
+</layout>
+}
+Root {
+ inputs 0
+ name D:/3d/f16/16.nk
+ frame 2
+ first_frame 0
+ last_frame 11
+ lock_range true
+ format "2048 1556 0 0 2048 1556 1 2K_Super_35(full-ap)"
+ proxy_type scale
+ proxy_format "1024 778 0 0 1024 778 1 1K_Super_35(full-ap)"
+ colorManagement Nuke
+}
+Read {
+ inputs 0
+ file D:/3d/f16/f16/b2.jpg
+ format "300 300 0 0 300 300 1 "
+ origset true
+ name Read3
+ xpos 974
+ ypos -275
+}
+Grade {
+ blackpoint -0.4
+ whitepoint 0.96
+ add -0.008
+ name Grade3
+ xpos 939
+ ypos -69
+}
+Blur {
+ size 4.2
+ filter triangle
+ name Blur3
+ xpos 922
+ ypos 5
+ disable true
+}
+Read {
+ inputs 0
+ file D:/3d/f16/render/12/f00_View######.png
+ format "300 300 0 0 300 300 1 "
+ first 120000
+ last 120012
+ origfirst 120000
+ origlast 120012
+ origset true
+ name Read4
+ xpos 448
+ ypos -244
+}
+Blur {
+ size 2.2
+ filter quadratic
+ name Blur4
+ xpos 475
+ ypos -97
+}
+Grade {
+ whitepoint 1.28
+ black -0.0002
+ white 2.55
+ multiply 1.98
+ gamma 2.7
+ name Grade4
+ xpos 486
+ ypos -35
+}
+HueCorrect {
+ hue {sat {}
+   lum {}
+   red {}
+   green {}
+   blue {curve 1 1 1 1 1.525373101 x4.393654823 1.859203935 x6 1}
+   r_sup {}
+   g_sup {}
+   b_sup {}
+   sat_thrsh {}}
+ name HueCorrect2
+ xpos 500
+ ypos 25
+}
+OFXuk.co.thefoundry.furnace.f_regrain_v403 {
+ grainType "Preset Stock"
+ presetStock "FUJIF500 4K"
+ amount 1.04
+ size 0.46
+ output Result
+ "Analysis Region" 0
+ regionBL {921.5999756 700.1999815}
+ regionTR {1126.400024 855.8000185}
+ frame 1
+ grainColourSpace sRGB
+ Advanced 0
+ processRed true
+ redAmount 1
+ redSize 1
+ processGreen true
+ greenAmount 1
+ greenSize 1
+ processBlue true
+ blueAmount 1
+ blueSize 1
+ "Grain Response" 0
+ srcColourSpace "Grain Colour Space"
+ lowGain 1
+ midGain 1
+ highGain 1
+ useResponse false
+ responseMix 1
+ drawResponse false
+ needsGrainSample true
+ notBeenAnalysed true
+ grainClipNeeded true
+ inputHasChanged false
+ responseR0Counts 0
+ responseR0Samples 0
+ responseG0Counts 0
+ responseG0Samples 0
+ responseB0Counts 0
+ responseB0Samples 0
+ responseR1Counts 0
+ responseR1Samples 0
+ responseG1Counts 0
+ responseG1Samples 0
+ responseB1Counts 0
+ responseB1Samples 0
+ responseR2Counts 0
+ responseR2Samples 0
+ responseG2Counts 0
+ responseG2Samples 0
+ responseB2Counts 0
+ responseB2Samples 0
+ responseR3Counts 0
+ responseR3Samples 0
+ responseG3Counts 0
+ responseG3Samples 0
+ responseB3Counts 0
+ responseB3Samples 0
+ responseR4Counts 0
+ responseR4Samples 0
+ responseG4Counts 0
+ responseG4Samples 0
+ responseB4Counts 0
+ responseB4Samples 0
+ responseR5Counts 0
+ responseR5Samples 0
+ responseG5Counts 0
+ responseG5Samples 0
+ responseB5Counts 0
+ responseB5Samples 0
+ responseR6Counts 0
+ responseR6Samples 0
+ responseG6Counts 0
+ responseG6Samples 0
+ responseB6Counts 0
+ responseB6Samples 0
+ responseR7Counts 0
+ responseR7Samples 0
+ responseG7Counts 0
+ responseG7Samples 0
+ responseB7Counts 0
+ responseB7Samples 0
+ responseR8Counts 0
+ responseR8Samples 0
+ responseG8Counts 0
+ responseG8Samples 0
+ responseB8Counts 0
+ responseB8Samples 0
+ responseR9Counts 0
+ responseR9Samples 0
+ responseG9Counts 0
+ responseG9Samples 0
+ responseB9Counts 0
+ responseB9Samples 0
+ grainSample ""
+ cacheBreaker true
+ name F_ReGrain2
+ xpos 695
+ ypos 71
+}
+Merge2 {
+ inputs 2
+ operation under
+ name Merge2
+ xpos 717
+ ypos 187
+}
+Read {
+ inputs 0
+ file D:/3d/f16/final1/snd.jpg
+ format "300 300 0 0 300 300 1 "
+ origset true
+ name Read17
+ xpos 84
+ ypos -331
+}
+Grade {
+ blackpoint -0.4
+ whitepoint 0.96
+ add -0.008
+ name Grade2
+ xpos -73
+ ypos -137
+}
+Blur {
+ size 4.2
+ filter triangle
+ name Blur2
+ xpos -73
+ ypos -99
+ disable true
+}
+Read {
+ inputs 0
+ file D:/3d/f16/final1/l####.png
+ format "300 300 0 0 300 300 1 "
+ first 0
+ last 11
+ origfirst 0
+ origlast 11
+ origset true
+ name Read15
+ xpos 22
+ ypos -608
+}
+Keyer {
+ input alpha
+ operation "luminance key"
+ range {0.0414194086 0.09550895179 0.4202166612 0.6958410141}
+ name Keyer1
+ xpos -378
+ ypos -250
+ disable true
+}
+Premult {
+ name Premult1
+ xpos -358
+ ypos -190
+}
+Blur {
+ size 2.2
+ filter quadratic
+ name Blur1
+ xpos -335
+ ypos -153
+}
+Grade {
+ name Grade1
+ xpos -335
+ ypos -115
+}
+ColorCorrect {
+ saturation 1.02
+ gamma 1.02
+ name ColorCorrect1
+ xpos -332
+ ypos -65
+}
+OFXuk.co.thefoundry.furnace.f_regrain_v403 {
+ grainType "Preset Stock"
+ presetStock "FUJIF500 4K"
+ amount 1.04
+ size 0.46
+ output Result
+ "Analysis Region" 0
+ regionBL {921.5999756 700.1999815}
+ regionTR {1126.400024 855.8000185}
+ frame 1
+ grainColourSpace sRGB
+ Advanced 0
+ processRed true
+ redAmount 1
+ redSize 1
+ processGreen true
+ greenAmount 1
+ greenSize 1
+ processBlue true
+ blueAmount 1
+ blueSize 1
+ "Grain Response" 0
+ srcColourSpace "Grain Colour Space"
+ lowGain 1
+ midGain 1
+ highGain 1
+ useResponse false
+ responseMix 1
+ drawResponse false
+ needsGrainSample true
+ notBeenAnalysed true
+ grainClipNeeded true
+ inputHasChanged false
+ responseR0Counts 0
+ responseR0Samples 0
+ responseG0Counts 0
+ responseG0Samples 0
+ responseB0Counts 0
+ responseB0Samples 0
+ responseR1Counts 0
+ responseR1Samples 0
+ responseG1Counts 0
+ responseG1Samples 0
+ responseB1Counts 0
+ responseB1Samples 0
+ responseR2Counts 0
+ responseR2Samples 0
+ responseG2Counts 0
+ responseG2Samples 0
+ responseB2Counts 0
+ responseB2Samples 0
+ responseR3Counts 0
+ responseR3Samples 0
+ responseG3Counts 0
+ responseG3Samples 0
+ responseB3Counts 0
+ responseB3Samples 0
+ responseR4Counts 0
+ responseR4Samples 0
+ responseG4Counts 0
+ responseG4Samples 0
+ responseB4Counts 0
+ responseB4Samples 0
+ responseR5Counts 0
+ responseR5Samples 0
+ responseG5Counts 0
+ responseG5Samples 0
+ responseB5Counts 0
+ responseB5Samples 0
+ responseR6Counts 0
+ responseR6Samples 0
+ responseG6Counts 0
+ responseG6Samples 0
+ responseB6Counts 0
+ responseB6Samples 0
+ responseR7Counts 0
+ responseR7Samples 0
+ responseG7Counts 0
+ responseG7Samples 0
+ responseB7Counts 0
+ responseB7Samples 0
+ responseR8Counts 0
+ responseR8Samples 0
+ responseG8Counts 0
+ responseG8Samples 0
+ responseB8Counts 0
+ responseB8Samples 0
+ responseR9Counts 0
+ responseR9Samples 0
+ responseG9Counts 0
+ responseG9Samples 0
+ responseB9Counts 0
+ responseB9Samples 0
+ grainSample ""
+ cacheBreaker true
+ name F_ReGrain1
+ xpos -335
+ ypos -4
+}
+Dot {
+ name Dot1
+ xpos -301
+ ypos 38
+}
+Merge2 {
+ inputs 2
+ operation under
+ name Merge1
+ xpos -73
+ ypos 34
+}
+Write {
+ file D:/3d/f16/final1/f3/l##.jpg
+ file_type jpeg
+ _jpeg_quality 0.595
+ checkHashOnRead false
+ version 216
+ name Write1
+ xpos -73
+ ypos 67
+}
+Viewer {
+ frame 2
+ frame_range 0-11
+ frame_range_lock true
+ full_frame_processing true
+ name Viewer1
+ xpos -73
+ ypos 116
+}
+Read {
+ inputs 0
+ file D:/3d/f16/f16/b2.jpg
+ format "300 300 0 0 300 300 1 "
+ origset true
+ name Read2
+ xpos -209
+ ypos -296
+}
+Read {
+ inputs 0
+ file D:/3d/f16/final1/gr.jpg
+ format "300 300 0 0 300 300 1 "
+ origset true
+ name Read16
+ xpos -57
+ ypos -346
+}
+Read {
+ inputs 0
+ file D:/3d/f16/final1/a####.png
+ format "300 300 0 0 300 300 1 "
+ first 0
+ last 11
+ origfirst 0
+ origlast 11
+ origset true
+ name Read1
+ xpos -736
+ ypos -510
+}
+Read {
+ inputs 0
+ file D:/3d/f16/final1/b####.png
+ format "300 300 0 0 300 300 1 "
+ first 0
+ last 11
+ origfirst 0
+ origlast 11
+ origset true
+ name Read5
+ xpos -676
+ ypos -592
+}
+Read {
+ inputs 0
+ file D:/3d/f16/final1/c####.png
+ format "300 300 0 0 300 300 1 "
+ first 0
+ last 11
+ origfirst 0
+ origlast 11
+ origset true
+ name Read6
+ xpos -616
+ ypos -506
+}
+Read {
+ inputs 0
+ file D:/3d/f16/final1/d####.png
+ format "300 300 0 0 300 300 1 "
+ first 0
+ last 11
+ origfirst 0
+ origlast 11
+ origset true
+ name Read7
+ xpos -557
+ ypos -591
+}
+Read {
+ inputs 0
+ file D:/3d/f16/final1/e####.png
+ format "300 300 0 0 300 300 1 "
+ first 0
+ last 11
+ origfirst 0
+ origlast 11
+ origset true
+ name Read8
+ xpos -479
+ ypos -506
+}
+Read {
+ inputs 0
+ file D:/3d/f16/final1/f####.png
+ format "300 300 0 0 300 300 1 "
+ first 0
+ last 11
+ origfirst 0
+ origlast 11
+ origset true
+ name Read9
+ xpos -431
+ ypos -613
+}
+Read {
+ inputs 0
+ file D:/3d/f16/final1/g####.png
+ format "300 300 0 0 300 300 1 "
+ first 0
+ last 11
+ origfirst 0
+ origlast 11
+ origset true
+ name Read10
+ xpos -341
+ ypos -510
+}
+Read {
+ inputs 0
+ file D:/3d/f16/final1/h####.png
+ format "300 300 0 0 300 300 1 "
+ first 0
+ last 11
+ origfirst 0
+ origlast 11
+ origset true
+ name Read11
+ xpos -267
+ ypos -615
+}
+Read {
+ inputs 0
+ file D:/3d/f16/final1/i####.png
+ format "300 300 0 0 300 300 1 "
+ first 0
+ last 11
+ origfirst 0
+ origlast 11
+ origset true
+ name Read12
+ xpos -197
+ ypos -498
+}
+Read {
+ inputs 0
+ file D:/3d/f16/final1/j####.png
+ format "300 300 0 0 300 300 1 "
+ first 0
+ last 11
+ origfirst 0
+ origlast 11
+ origset true
+ name Read13
+ xpos -126
+ ypos -608
+}
+Read {
+ inputs 0
+ file D:/3d/f16/final1/k####.png
+ format "300 300 0 0 300 300 1 "
+ first 0
+ last 11
+ origfirst 0
+ origlast 11
+ origset true
+ name Read14
+ xpos -46
+ ypos -496
+}
