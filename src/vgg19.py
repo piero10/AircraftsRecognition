@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-'''VGG16 model for Keras.
+'''VGG19 model for Keras.
 
 # Reference:
 
@@ -21,15 +21,15 @@ from keras import backend as K
 from imagenet_utils import decode_predictions, preprocess_input
 
 
-TH_WEIGHTS_PATH = 'https://github.com/fchollet/deep-learning-models/releases/download/v0.1/vgg16_weights_th_dim_ordering_th_kernels.h5'
-TF_WEIGHTS_PATH = 'https://github.com/fchollet/deep-learning-models/releases/download/v0.1/vgg16_weights_tf_dim_ordering_tf_kernels.h5'
-TH_WEIGHTS_PATH_NO_TOP = 'https://github.com/fchollet/deep-learning-models/releases/download/v0.1/vgg16_weights_th_dim_ordering_th_kernels_notop.h5'
-TF_WEIGHTS_PATH_NO_TOP = 'https://github.com/fchollet/deep-learning-models/releases/download/v0.1/vgg16_weights_tf_dim_ordering_tf_kernels_notop.h5'
+TH_WEIGHTS_PATH = 'https://github.com/fchollet/deep-learning-models/releases/download/v0.1/vgg19_weights_th_dim_ordering_th_kernels.h5'
+TF_WEIGHTS_PATH = 'https://github.com/fchollet/deep-learning-models/releases/download/v0.1/vgg19_weights_tf_dim_ordering_tf_kernels.h5'
+TH_WEIGHTS_PATH_NO_TOP = 'https://github.com/fchollet/deep-learning-models/releases/download/v0.1/vgg19_weights_th_dim_ordering_th_kernels_notop.h5'
+TF_WEIGHTS_PATH_NO_TOP = 'https://github.com/fchollet/deep-learning-models/releases/download/v0.1/vgg19_weights_tf_dim_ordering_tf_kernels_notop.h5'
 
 
-def VGG16(include_top=True, weights='imagenet',
+def VGG19(include_top=True, weights='imagenet',
           input_tensor=None):
-    '''Instantiate the VGG16 architecture,
+    '''Instantiate the VGG19 architecture,
     optionally loading weights pre-trained
     on ImageNet. Note that when using TensorFlow,
     for best performance you should set
@@ -89,18 +89,21 @@ def VGG16(include_top=True, weights='imagenet',
     x = Convolution2D(256, 3, 3, activation='relu', border_mode='same', name='block3_conv1')(x)
     x = Convolution2D(256, 3, 3, activation='relu', border_mode='same', name='block3_conv2')(x)
     x = Convolution2D(256, 3, 3, activation='relu', border_mode='same', name='block3_conv3')(x)
+    x = Convolution2D(256, 3, 3, activation='relu', border_mode='same', name='block3_conv4')(x)
     x = MaxPooling2D((2, 2), strides=(2, 2), name='block3_pool')(x)
 
     # Block 4
     x = Convolution2D(512, 3, 3, activation='relu', border_mode='same', name='block4_conv1')(x)
     x = Convolution2D(512, 3, 3, activation='relu', border_mode='same', name='block4_conv2')(x)
     x = Convolution2D(512, 3, 3, activation='relu', border_mode='same', name='block4_conv3')(x)
+    x = Convolution2D(512, 3, 3, activation='relu', border_mode='same', name='block4_conv4')(x)
     x = MaxPooling2D((2, 2), strides=(2, 2), name='block4_pool')(x)
 
     # Block 5
     x = Convolution2D(512, 3, 3, activation='relu', border_mode='same', name='block5_conv1')(x)
     x = Convolution2D(512, 3, 3, activation='relu', border_mode='same', name='block5_conv2')(x)
     x = Convolution2D(512, 3, 3, activation='relu', border_mode='same', name='block5_conv3')(x)
+    x = Convolution2D(512, 3, 3, activation='relu', border_mode='same', name='block5_conv4')(x)
     x = MaxPooling2D((2, 2), strides=(2, 2), name='block5_pool')(x)
 
     if include_top:
@@ -118,11 +121,11 @@ def VGG16(include_top=True, weights='imagenet',
         print('K.image_dim_ordering:', K.image_dim_ordering())
         if K.image_dim_ordering() == 'th':
             if include_top:
-                weights_path = get_file('vgg16_weights_th_dim_ordering_th_kernels.h5',
+                weights_path = get_file('vgg19_weights_th_dim_ordering_th_kernels.h5',
                                         TH_WEIGHTS_PATH,
                                         cache_subdir='models')
             else:
-                weights_path = get_file('vgg16_weights_th_dim_ordering_th_kernels_notop.h5',
+                weights_path = get_file('vgg19_weights_th_dim_ordering_th_kernels_notop.h5',
                                         TH_WEIGHTS_PATH_NO_TOP,
                                         cache_subdir='models')
             model.load_weights(weights_path)
@@ -138,11 +141,11 @@ def VGG16(include_top=True, weights='imagenet',
                 convert_all_kernels_in_model(model)
         else:
             if include_top:
-                weights_path = get_file('vgg16_weights_tf_dim_ordering_tf_kernels.h5',
+                weights_path = get_file('vgg19_weights_tf_dim_ordering_tf_kernels.h5',
                                         TF_WEIGHTS_PATH,
                                         cache_subdir='models')
             else:
-                weights_path = get_file('vgg16_weights_tf_dim_ordering_tf_kernels_notop.h5',
+                weights_path = get_file('vgg19_weights_tf_dim_ordering_tf_kernels_notop.h5',
                                         TF_WEIGHTS_PATH_NO_TOP,
                                         cache_subdir='models')
             model.load_weights(weights_path)
@@ -152,9 +155,9 @@ def VGG16(include_top=True, weights='imagenet',
 
 
 if __name__ == '__main__':
-    model = VGG16(include_top=True, weights='imagenet')
+    model = VGG19(include_top=True, weights='imagenet')
 
-    img_path = 'elephant.jpg'
+    img_path = 'f16.jpg'
     img = image.load_img(img_path, target_size=(224, 224))
     x = image.img_to_array(img)
     x = np.expand_dims(x, axis=0)

@@ -215,7 +215,7 @@ def preprocess_input(x):
 if __name__ == '__main__':
     model = Xception(include_top=True, weights='imagenet')
 
-    img_path = 'elephant.jpg'
+    img_path = 'f15.jpg'
     img = image.load_img(img_path, target_size=(299, 299))
     x = image.img_to_array(img)
     x = np.expand_dims(x, axis=0)
