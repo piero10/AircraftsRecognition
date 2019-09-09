@@ -16,6 +16,8 @@ $RECYCLE.BIN/
 *.pyc
 ~$*.*
 ~*.*
+~$
+~$*
 
 # Windows shortcuts
 *.lnk
