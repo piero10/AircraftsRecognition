@@ -1,0 +1,240 @@
+# Max2Mtl Version 4.0 Mar 10th, 2001
+#
+# Multi/Sub Material__53 (28) to come 
+#
+newmtl f16-tail_fin
+Ka  0.7 0.7 0.7
+Kd  0.7 0.7 0.7
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  0.5
+illum 2
+map_Kd F16-LTAI.JPG
+#
+newmtl f16-tail_fin
+Ka  0.7 0.7 0.7
+Kd  0.7 0.7 0.7
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  0.5
+illum 2
+map_Kd F16-RTAI.JPG
+#
+newmtl f16-top
+Ka  0.4 0.5 0.5
+Kd  0.4 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  0.5
+illum 2
+map_Kd F16-FUSM.JPG
+#
+newmtl f16-botton1
+Ka  0.8 0.9 0.9
+Kd  0.8 0.9 0.9
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  0.5
+illum 2
+map_Kd F16-FUBM.JPG
+#
+newmtl f16-left_intake
+Ka  0.8 0.9 0.9
+Kd  0.8 0.9 0.9
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  0.5
+illum 2
+map_Kd F16-LINT.JPG
+#
+newmtl f-16_white
+Ka  1.0 1.0 1.0
+Kd  1.0 1.0 1.0
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.5
+illum 2
+#
+newmtl f16-black
+Ka  0.2 0.1 0.1
+Kd  0.2 0.1 0.1
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  0.5
+illum 2
+#
+newmtl f16-right_intake
+Ka  0.8 0.9 0.9
+Kd  0.8 0.9 0.9
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  0.5
+illum 2
+map_Kd F16-RINT.JPG
+#
+newmtl f16-botton2
+Ka  0.8 0.9 0.9
+Kd  0.8 0.9 0.9
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  0.5
+illum 2
+#
+newmtl exhaust_1
+Ka  0.2 0.2 0.3
+Kd  0.2 0.2 0.3
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  0.5
+illum 2
+#
+newmtl white
+Ka  1.0 1.0 1.0
+Kd  1.0 1.0 1.0
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.5
+illum 2
+#
+newmtl exhaust_2
+Ka  0.6 0.5 0.5
+Kd  0.6 0.5 0.5
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.5
+illum 2
+#
+newmtl f16-front_canopy
+Ka  0.4 0.5 0.5
+Kd  0.4 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  0.5
+illum 2
+map_Kd F16-FUSE.JPG
+#
+newmtl f16-glass
+Ka  0.1 0.2 0.0
+Kd  0.1 0.2 0.0
+Ks  1.0 1.0 1.0
+d  0.4
+Ns  0.5
+illum 2
+#
+newmtl f16-chrome
+Ka  0.2 0.1 0.1
+Kd  0.2 0.1 0.1
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.5
+illum 2
+#
+newmtl f16-white
+Ka  1.0 1.0 1.0
+Kd  1.0 1.0 1.0
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.5
+illum 2
+#
+newmtl f16-white1
+Ka  1.0 1.0 1.0
+Kd  1.0 1.0 1.0
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.5
+illum 2
+#
+newmtl f16-white2
+Ka  1.0 1.0 1.0
+Kd  1.0 1.0 1.0
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.5
+illum 2
+#
+newmtl f16-botton
+Ka  0.8 0.9 0.9
+Kd  0.8 0.9 0.9
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  0.5
+illum 2
+#
+newmtl Material__3138
+Ka  0.2 0.2 0.2
+Kd  0.2 0.2 0.2
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.5
+illum 2
+map_Kd RUEDAF.JPG
+#
+newmtl metal
+Ka  0.2 0.3 0.2
+Kd  0.2 0.3 0.2
+Ks  0.8 0.8 0.8
+d  1.0
+Ns  0.5
+illum 2
+#
+newmtl f16-white3
+Ka  1.0 1.0 1.0
+Kd  1.0 1.0 1.0
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.5
+illum 2
+#
+newmtl f16-green
+Ka  0.1 0.3 0.1
+Kd  0.1 0.3 0.1
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  0.5
+illum 2
+#
+newmtl f16-botton3
+Ka  0.8 0.9 0.9
+Kd  0.8 0.9 0.9
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  0.5
+illum 2
+#
+newmtl f16-top_mediu1
+Ka  0.7 0.7 0.7
+Kd  0.7 0.7 0.7
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  0.5
+illum 2
+#
+newmtl SUELO
+Ka  0.8 0.8 0.7
+Kd  0.8 0.8 0.7
+Ks  0.0 0.0 0.0
+d  1.0
+Ns  0.5
+illum 2
+#
+newmtl f16-dark_top_1
+Ka  0.4 0.5 0.5
+Kd  0.4 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  0.5
+illum 2
+#
+newmtl Material__3139
+Ka  0.2 0.2 0.2
+Kd  0.2 0.2 0.2
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.5
+illum 2
+map_Kd RUEDAB.JPG
+#
+# Multi/Sub Material__53 done 
+#
+# EOF
